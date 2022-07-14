@@ -108,8 +108,7 @@ b4f2758 (HEAD -> master) HEAD@{2}: commit (initial): fist
 git branch -v 
 
 ```bash
-╭─gaopeng@gaopengdeMacBook-Pro ~/Documents/gitbase ‹master›
-╰─$ git branch -v
+ git branch -v
 * master b4f2758 fist
 ```
 
@@ -118,25 +117,41 @@ git branch -v
 git branch 分支名
 
 ```bash
-╭─gaopeng@gaopengdeMacBook-Pro ~/Documents/gitbase ‹master›
-╰─$ git branch  hot-fix
-╭─gaopeng@gaopengdeMacBook-Pro ~/Documents/gitbase ‹master›
-╰─$ git branch -v
+ git branch  hot-fix
+ git branch -v
   hot-fix b4f2758 fist
 * master  b4f2758 fist
 ```
+
+- ##### 删除分支
+
+###### 删除本地分支
+
+git   branch   -d   分支名称 （例：hot-fix）
+
+###### 删除远程分支
+
+ git push  地址（例：https://github.com/RocBrid/gitstudy.git ） --delete   分支名(例：hot-fix)
+
+```bash
+$ git push  https://github.com/RocBrid/gitstudy.git  --delete hot-fix
+To https://github.com/RocBrid/gitstudy.git
+ - [deleted]         hot-fix
+```
+
+清理本地无效分支 (远程已经删除本地没有删除的分支) 
+
+git fetch -p
 
 - ##### 切换分支
 
 git checkout 分支名
 
 ```bash
-╭─gaopeng@gaopengdeMacBook-Pro ~/Documents/gitbase ‹master›
-╰─$ git checkout hot-fix
+ git checkout hot-fix
 Switched to branch 'hot-fix'
 
-╭─gaopeng@gaopengdeMacBook-Pro ~/Documents/gitbase ‹hot-fix›
-╰─$ git branch -v
+ git branch -v
 * hot-fix b4f2758 fist
   master  b4f2758 fist
 ```
@@ -150,8 +165,7 @@ Switched to branch 'hot-fix'
 git merge hot-fix（合并的分支名称）
 
 ```bash
-╭─gaopeng@gaopengdeMacBook-Pro ~/Documents/gitbase ‹master›
-╰─$ git merge hot-fix
+ git merge hot-fix
 Updating b4f2758..ad46329
 Fast-forward
  hi.txt | 2 +-
@@ -163,16 +177,14 @@ Fast-forward
 当master和hot-fix都修改了代码时，合并时会存在冲突，需要人工手动的去修改
 
 ```bash
-╭─gaopeng@gaopengdeMacBook-Pro ~/Documents/gitbase ‹master›
-╰─$ git merge hot-fix
+git merge hot-fix
 Auto-merging hi.txt
 CONFLICT (content): Merge conflict in hi.txt
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
 ```bash
-╭─gaopeng@gaopengdeMacBook-Pro ~/Documents/gitbase ‹master●›
-╰─$ cat hi.txt                                                                                                      
+ cat hi.txt                                                                                                      
 isdsdadasdad
 
 <<<<<<< HEAD #表示当前分支存在的位置
@@ -249,7 +261,6 @@ Updating 4b2c4ab..6fc6f7e
 Fast-forward
  hell.txt | 1 +
  1 file changed, 1 insertion(+)
-
 ```
 
 #### 11、克隆远程仓库的代码
