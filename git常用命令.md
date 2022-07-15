@@ -24,6 +24,8 @@ nothing to commit (create/copy files and use "git add" to track)
 
 git add  xxx
 
+git add -A    将已经修改的文件添加到暂存区
+
 git status
 
 ```bash
