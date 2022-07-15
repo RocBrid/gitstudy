@@ -1,6 +1,6 @@
 ###   linux
 
-##### 1、常用目录介绍
+##### 1、常用目录介绍s
 
 ![image-20220704091417598](https://typora778-1302470382.cos.ap-shanghai.myqcloud.com/mytyporamytyporaimage-20220704091417598.png)
 
